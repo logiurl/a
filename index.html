@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - make it pop</title>
+  <title>Redirecting..</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 
@@ -10,9 +10,9 @@
 <body>
 <!-- partial:index.partial.html -->
 <h1>
-  <span>make it</span>
+  <span>Redirecting </span>
   <span>
-    &nbsp;pop
+    &nbsp;Soon..※
     <span class="pops">
       <span class="pop"></span>
       <span class="pop"></span>
@@ -25,5 +25,53 @@
 </h1>
 <!-- partial -->
   
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom URL Redirection</title>
+    <script>
+        // Function to handle redirection based on fragments
+        function redirectBasedOnFragment() {
+            // Get the fragment from the URL
+            var fragment = window.location.hash.substr(1);
+
+            // Define redirection mappings
+            var redirections = {
+                'ansh': 'https://anshpreet2442.github.io/sundown/',
+                'mahip': 'https://pixeldrain.com/',
+              'manjeet': 'anshpreet.com',
+              'akshit': 'https://pixeldrain.com/',
+              'angel': 'https://pixeldrain.com/',
+              'gobind': 'https://pixeldrain.com/',
+              'armaan': 'https://pixeldrain.com/',
+              'nitya': 'https://pixeldrain.com/',
+              'nabu': 'https://pixeldrain.com/',
+              'navya': 'https://pixeldrain.com/',
+
+
+                // Add more mappings as needed
+            };
+
+            // Check if the fragment has a corresponding redirection
+            if (redirections.hasOwnProperty(fragment)) {
+                // Redirect to the specified URL
+                window.location.href = redirections[fragment];
+            } else {
+                // Handle the case when no matching redirection is found
+                console.log("No redirection found for the given fragment.");
+            }
+        }
+
+        // Call the redirection function on page load
+        window.onload = redirectBasedOnFragment;
+    </script>
+</head>
+<body>
+  
+    <!-- Your page content goes here -->
 </body>
 </html>
