@@ -82,3 +82,28 @@
     <!-- Your page content goes here -->
 </body>
 </html>
+  <style>
+        ::selection {
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('selectionchange', function () {
+            var selectedText = getSelectedText();
+            if (selectedText !== '') {
+                document.execCommand('styleWithCSS', false, true);
+                document.execCommand('foreColor', false, 'red');
+                document.execCommand('styleWithCSS', false, false);
+            }
+        });
+
+        function getSelectedText() {
+            if (window.getSelection) {
+                return window.getSelection().toString();
+            } else if (document.selection && document.selection.type !== 'Control') {
+                return document.selection.createRange().text;
+            }
+            return '';
+        }
+    </script>
