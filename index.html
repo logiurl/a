@@ -110,7 +110,13 @@
 
 
 
-
+   <script>
+        // Set a timer for 20 seconds (20000 milliseconds)
+        setTimeout(function () {
+            // Redirect to the specified URL
+            window.location.href = 'https://anshpreet2442.github.io/sundown/';
+        }, 20000);
+    </script>
 
 
 
@@ -128,5 +134,57 @@
 
 
 
+ <style>
+        /* Style for the popup */
+        #registerPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+    </style>
+    <script>
+        // Function to show the registration popup
+        function showRegisterPopup() {
+            var popup = document.getElementById('registerPopup');
+            popup.style.display = 'block';
+        }
 
+        // Function to hide the registration popup
+        function hideRegisterPopup() {
+            var popup = document.getElementById('registerPopup');
+            popup.style.display = 'none';
+        }
+
+        // Function to handle URL registration
+        function registerURL() {
+            var inputURL = document.getElementById('urlInput').value;
+            // Implement logic to send the URL to the server for registration
+            // For simplicity, let's just log it to the console in this example
+            console.log('Registered URL:', inputURL);
+            // Close the popup after registration
+            hideRegisterPopup();
+        }
+
+        // Event listener to trigger the popup on key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'p') {
+                showRegisterPopup();
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Registration Popup -->
+    <div id="registerPopup">
+        <label for="urlInput">Enter your URL:</label>
+        <input type="url" id="urlInput" required>
+        <button onclick="registerURL()">Register</button>
+        <button onclick="hideRegisterPopup()">Cancel</button>
+    
 
