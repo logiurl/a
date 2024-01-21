@@ -134,7 +134,32 @@
 
 
 
- <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
         /* Style for the popup */
         #registerPopup {
             display: none;
@@ -163,10 +188,20 @@
 
         // Function to handle URL registration
         function registerURL() {
+            var inputWord = document.getElementById('wordInput').value;
             var inputURL = document.getElementById('urlInput').value;
-            // Implement logic to send the URL to the server for registration
-            // For simplicity, let's just log it to the console in this example
-            console.log('Registered URL:', inputURL);
+
+            // Validate inputs
+            if (!inputWord || !inputURL) {
+                alert('Please enter both word and URL.');
+                return;
+            }
+
+            // Save the mapping to localStorage
+            var mappings = JSON.parse(localStorage.getItem('urlMappings')) || {};
+            mappings[inputWord] = inputURL;
+            localStorage.setItem('urlMappings', JSON.stringify(mappings));
+
             // Close the popup after registration
             hideRegisterPopup();
         }
@@ -182,9 +217,25 @@
 <body>
     <!-- Registration Popup -->
     <div id="registerPopup">
+        <label for="wordInput">Enter a word:</label>
+        <input type="text" id="wordInput" required>
         <label for="urlInput">Enter your URL:</label>
         <input type="url" id="urlInput" required>
         <button onclick="registerURL()">Register</button>
         <button onclick="hideRegisterPopup()">Cancel</button>
-    
+    </div>
+
+    <!-- Your page content goes here -->
+
+
+
+
+
+
+
+
+
+
+
+
 
