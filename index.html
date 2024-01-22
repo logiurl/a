@@ -40,42 +40,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom URL Redirection</title>
-    <script>
-        // Function to handle redirection based on fragments
-        function redirectBasedOnFragment() {
-            // Get the fragment from the URL
-            var fragment = window.location.hash.substr(1);
+  <script>
+    // Function to handle redirection based on fragments and passwords
+    function redirectBasedOnFragment() {
+        // Get the fragment from the URL
+        var fragment = window.location.hash.substr(1);
 
-            // Define redirection mappings
-            var redirections = {
-                'ansh': 'https://anshpreet2442.github.io/sundown/',
-                'mahip': 'https://pixeldrain.com/',
-              'manjeet': 'anshpreet.com',
-              'akshit': 'https://pixeldrain.com/',
-              'angel': 'https://pixeldrain.com/',
-              'gobind': 'https://pixeldrain.com/',
-              'armaan': 'https://pixeldrain.com/',
-              'nitya': 'https://pixeldrain.com/',
-              'nabu': 'https://pixeldrain.com/',
-              'navya': 'https://pixeldrain.com/',
+        // Define redirection mappings along with passwords
+        var redirections = {
+            'ansh': { url: 'https://anshpreet2442.github.io/sundown/', password: '4757ansh' },
+            'mahip': { url: 'https://pixeldrain.com/', password: '' },
+            'manjeet': { url: 'anshpreet.com', password: '' },
+            'akshit': { url: 'https://pixeldrain.com/', password: '4759djc' },
+            'angel': { url: 'https://pixeldrain.com/', password: '' },
+            'gobind': { url: 'https://pixeldrain.com/', password: '' },
+            'armaan': { url: 'https://pixeldrain.com/', password: '' },
+            'nitya': { url: 'https://pixeldrain.com/', password: '' },
+            'nabu': { url: 'https://pixeldrain.com/', password: '' },
+            'navya': { url: 'https://pixeldrain.com/', password: '4757ansh' },
+            // Add more mappings as needed
+        };
 
+        // Check if the fragment has a corresponding redirection
+        if (redirections.hasOwnProperty(fragment)) {
+            var redirectInfo = redirections[fragment];
+            var password = prompt('Enter the password:');
 
-                // Add more mappings as needed
-            };
-
-            // Check if the fragment has a corresponding redirection
-            if (redirections.hasOwnProperty(fragment)) {
+            // Check if the password is correct
+            if (password === redirectInfo.password) {
                 // Redirect to the specified URL
-                window.location.href = redirections[fragment];
+                window.location.href = redirectInfo.url;
             } else {
-                // Handle the case when no matching redirection is found
-                console.log("No redirection found for the given fragment.");
+                alert('Incorrect password. Access denied.');
             }
+        } else {
+            // Handle the case when no matching redirection is found
+            console.log("No redirection found for the given fragment.");
         }
+    }
 
-        // Call the redirection function on page load
-        window.onload = redirectBasedOnFragment;
-    </script>
+    // Call the redirection function on page load
+    window.onload = redirectBasedOnFragment;
+</script>
+
 </head>
 <body>
   
