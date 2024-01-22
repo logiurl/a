@@ -51,7 +51,7 @@
             'ansh': { url: 'https://anshpreet2442.github.io/sundown/', password: '4757ansh' },
             'mahip': { url: 'https://pixeldrain.com/', password: '' },
             'manjeet': { url: 'anshpreet.com', password: '' },
-            'akshit': { url: 'https://pixeldrain.com/', },
+            'akshit': { url: 'https://pixeldrain.com/', password: '4757ansh' },
             'angel': { url: 'https://pixeldrain.com/', },
             'gobind': { url: 'https://pixeldrain.com/', },
             'armaan': { url: 'https://pixeldrain.com/', },
@@ -79,7 +79,7 @@
         // Check if the fragment has a corresponding redirection
         if (redirections.hasOwnProperty(fragment)) {
             var redirectInfo = redirections[fragment];
-            var password = prompt('Enter the password: [If Exists]');
+            var password = prompt('Enter the password: [If Exists] , by Default Password is blank , just click ok');
 
             // Check if the password is correct
             if (password === redirectInfo.password) {
