@@ -241,7 +241,15 @@
 
 
 
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the fragment from the URL
+      var fragment = window.location.hash.substring(1);
 
+      // Update the page title
+      document.title = "Redirecting to " + fragment;
+    });
+  </script>
 
 
 
