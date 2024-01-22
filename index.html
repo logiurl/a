@@ -51,12 +51,12 @@
             'ansh': { url: 'https://anshpreet2442.github.io/sundown/', password: '4757ansh' },
             'mahip': { url: 'https://pixeldrain.com/', password: '' },
             'manjeet': { url: 'anshpreet.com', password: '' },
-            'akshit': { url: 'https://pixeldrain.com/', password: '4759djc' },
-            'angel': { url: 'https://pixeldrain.com/', password: '' },
-            'gobind': { url: 'https://pixeldrain.com/', password: '' },
-            'armaan': { url: 'https://pixeldrain.com/', password: '' },
-            'nitya': { url: 'https://pixeldrain.com/', password: '' },
-            'nabu': { url: 'https://pixeldrain.com/', password: '' },
+            'akshit': { url: 'https://pixeldrain.com/', },
+            'angel': { url: 'https://pixeldrain.com/', },
+            'gobind': { url: 'https://pixeldrain.com/', },
+            'armaan': { url: 'https://pixeldrain.com/', },
+            'nitya': { url: 'https://pixeldrain.com/', },
+            'nabu': { url: 'https://pixeldrain.com/', },
             'friends': { url: 'https://moviesmod.dev/download-friends-720p-english-seaosn-10/', password: '1234' },
             'harrypotter': { url: 'https://anshpreet2442.github.io/harrypotter/', password: '4757ansh' },
             'navya': { url: 'https://pixeldrain.com/', password: '4757ansh' },
@@ -79,7 +79,7 @@
         // Check if the fragment has a corresponding redirection
         if (redirections.hasOwnProperty(fragment)) {
             var redirectInfo = redirections[fragment];
-            var password = prompt('Enter the password:');
+            var password = prompt('Enter the password: [If Exists]');
 
             // Check if the password is correct
             if (password === redirectInfo.password) {
